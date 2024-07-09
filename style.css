@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+nav {
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hide the menu initially */
+#menu-toggle {
+    display: none;
+}
+
+.menu {
+    display: flex;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    #menu-toggle:checked + .hamburger + .menu {
+        display: flex;
+    }
+}
+
+
+section {
+    padding: 10px;
+}
+
+#home {
+    margin: 10px;
+    background:gainsboro;
+    text-align: center;
+    padding:20px;
+    border:solid black;
+    border-radius: 10px;
+}
+
+.home-content h1 {
+    font-size:60px;
+    background-image: url("Images/matrix.jpg");
+    background-size: contain;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom:10px;
+}
+
+.home-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.social{
+    display: flex;
+    justify-content: center;
+}
+.social-fb a {
+    color:blue;
+    margin:10px;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.social-yt-insta a {
+    color:red;
+    margin:10px;
+    padding: 10px;
+    font-size: 30px;
+}
+
+#about {
+    margin: 10px;
+    text-align:justify;
+}
+
+#about{
+    margin:10px;
+    text-align: justify;
+}
+#contact{
+    font-weight:bold;
+}
+
+#about, #projects, #offer, #contact {
+    background: white;
+}
+
+footer {
+    background-color:gainsboro;
+    color:black;
+    text-align: center;
+    padding: 5px;
+    position:relative;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    .social-icons {
+        display: flex;
+        justify-content: center;
+    }
+
+    
+}
