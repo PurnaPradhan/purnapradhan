@@ -84,7 +84,7 @@ section {
 
 .home-content h1 {
     font-size:60px;
-    background-image: url("Images/matrix.jpg");
+    background-image: url("images/matrix.jpg");
     background-size: contain;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
