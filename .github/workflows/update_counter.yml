@@ -1,4 +1,4 @@
-name: Update Visit counter
+name: Update Visit Counter
 
 on:
   push:
@@ -31,5 +31,5 @@ jobs:
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
           git add counter.txt
-          git commit -m "Update visit count [skip ci]"
-          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/PurnaPradhan/purnapradhan.git
+          git commit -m "Update visit count [skip ci]" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/PurnaPradhan/purnapradhan.git || echo "Push failed"
