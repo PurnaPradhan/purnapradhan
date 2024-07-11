@@ -12,31 +12,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Debug: List files before update
-        run: |
-          echo "Listing files before update:"
-          ls -la
-          echo "Contents of counter.txt before update:"
-          cat counter.txt || echo "counter.txt does not exist"
-
       - name: Update visit count
         run: |
           if [ ! -f counter.txt ]; then echo 0 > counter.txt; fi
           count=$(cat counter.txt)
-          echo "Current count: $count"
-          
           new_count=$((count + 1))
-          echo "New count: $new_count"
           echo $new_count > counter.txt
 
-      - name: Debug: List files after update
-        run: |
-          echo "Listing files after update:"
-          ls -la
-          echo "Contents of counter.txt after update:"
-          cat counter.txt
-
-      - name: Commit changes
+      - name: Commit and push changes
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
@@ -49,6 +32,5 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Update visit count [skip ci]" || echo "No changes to commit"
+            git push origin main || echo "Push failed"
           fi
-          
-          git push https://github.com/PurnaPradhan/purnapradhan.git HEAD:main || echo "Push failed"
