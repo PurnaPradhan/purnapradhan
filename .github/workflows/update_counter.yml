@@ -14,8 +14,15 @@ jobs:
 
       - name: Update visit count
         run: |
+          # Ensure counter.txt exists and read its value
           if [ ! -f counter.txt ]; then echo 0 > counter.txt; fi
-          echo $(( $(cat counter.txt) + 1 )) > counter.txt
+          count=$(cat counter.txt)
+          echo "Current count: $count"
+          
+          # Increment the counter value
+          new_count=$((count + 1))
+          echo "New count: $new_count"
+          echo $new_count > counter.txt
 
       - name: Commit changes
         env:
@@ -25,4 +32,4 @@ jobs:
           git config --global user.name "GitHub Action"
           git add counter.txt
           git commit -m "Update visit count [skip ci]"
-          git push https://x-access-token:${GH_TOKEN}@github.com/PurnaPradhan/purnapradhan.git
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/PurnaPradhan/purnapradhan.git
