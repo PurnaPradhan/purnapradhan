@@ -17,11 +17,11 @@ jobs:
           # Ensure counter.txt exists and read its value
           if [ ! -f counter.txt ]; then echo 0 > counter.txt; fi
           count=$(cat counter.txt)
-          echo "Current count: $count"
+          echo "Current count: $count" # Debug: Print current count
           
           # Increment the counter value
           new_count=$((count + 1))
-          echo "New count: $new_count"
+          echo "New count: $new_count" # Debug: Print new count
           echo $new_count > counter.txt
 
       - name: Commit changes
@@ -31,5 +31,5 @@ jobs:
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
           git add counter.txt
-          git commit -m "Update visit count [skip ci]" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/PurnaPradhan/purnapradhan.git || echo "Push failed"
+          git commit -m "Update visit count [skip ci]" || echo "No changes to commit" # Handling no changes to commit
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/PurnaPradhan/purnapradhan.git || echo "Push failed" # Handling push failures
