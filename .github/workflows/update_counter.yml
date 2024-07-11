@@ -12,6 +12,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Debug: List files before update
+        run: |
+          echo "Listing files before update:"
+          ls -la
+          echo "Contents of counter.txt before update:"
+          cat counter.txt || echo "counter.txt does not exist"
+
       - name: Update visit count
         run: |
           # Ensure counter.txt exists and read its value
@@ -23,6 +30,13 @@ jobs:
           new_count=$((count + 1))
           echo "New count: $new_count" # Debug: Print new count
           echo $new_count > counter.txt
+
+      - name: Debug: List files after update
+        run: |
+          echo "Listing files after update:"
+          ls -la
+          echo "Contents of counter.txt after update:"
+          cat counter.txt
 
       - name: Commit changes
         env:
