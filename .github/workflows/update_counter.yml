@@ -1,4 +1,4 @@
-name: Update Visit Counter
+name: Update Visit counter
 
 on:
   push:
