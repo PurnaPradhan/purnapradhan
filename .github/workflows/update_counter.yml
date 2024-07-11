@@ -48,4 +48,5 @@ jobs:
           git add counter.txt
           git commit -m "Update visit count [skip ci]" || echo "No changes to commit" # Handling no changes to commit
           git log -1 # Debug: Log the latest commit
-          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/PurnaPradhan/purnapradhan.git || echo "Push failed" # Handling push failures
+          git push https://github.com/PurnaPradhan/purnapradhan.git HEAD:main || echo "Push failed" # Use the correct repository URL format
+
