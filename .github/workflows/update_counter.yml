@@ -21,14 +21,12 @@ jobs:
 
       - name: Update visit count
         run: |
-          # Ensure counter.txt exists and read its value
           if [ ! -f counter.txt ]; then echo 0 > counter.txt; fi
           count=$(cat counter.txt)
-          echo "Current count: $count" # Debug: Print current count
+          echo "Current count: $count"
           
-          # Increment the counter value
           new_count=$((count + 1))
-          echo "New count: $new_count" # Debug: Print new count
+          echo "New count: $new_count"
           echo $new_count > counter.txt
 
       - name: Debug: List files after update
@@ -44,9 +42,13 @@ jobs:
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
-          git status # Debug: Check git status
+          
           git add counter.txt
-          git commit -m "Update visit count [skip ci]" || echo "No changes to commit" # Handling no changes to commit
-          git log -1 # Debug: Log the latest commit
-          git push https://github.com/PurnaPradhan/purnapradhan.git HEAD:main || echo "Push failed" # Use the correct repository URL format
-
+          
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update visit count [skip ci]" || echo "No changes to commit"
+          fi
+          
+          git push https://github.com/PurnaPradhan/purnapradhan.git HEAD:main || echo "Push failed"
