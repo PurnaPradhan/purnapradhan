@@ -44,6 +44,8 @@ jobs:
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
+          git status # Debug: Check git status
           git add counter.txt
           git commit -m "Update visit count [skip ci]" || echo "No changes to commit" # Handling no changes to commit
+          git log -1 # Debug: Log the latest commit
           git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/PurnaPradhan/purnapradhan.git || echo "Push failed" # Handling push failures
