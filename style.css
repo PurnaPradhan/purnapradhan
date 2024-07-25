@@ -1,19 +1,22 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding-top: 50px;
     box-sizing: border-box;
 }
 
 /* Base Styles */
 nav {
-    padding: 15px;
-    margin: 5px;
-    position: relative;
+    background-color:black;
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav a {
-    color: black;
+    color:white;
     text-decoration: none;
     padding: 10px;
 }
@@ -180,4 +183,60 @@ footer {
 }
 .box a:hover {
     text-decoration: underline;
+}
+
+
+.wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background:grey;
+    padding: 10px;
+    height: calc(100vh - 20px); /* Adjust this based on the height of the navbar */
+    overflow-y: auto;
+    position: fixed;
+    top: 50px; /* Adjust this based on the height of the navbar */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color:black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: black;
+    color: white;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    display: flex;
+    margin-left: 270px;
+    gap: 5px;
+    padding: 10px;
+    overflow: hidden; /* Ensures content doesn't overflow */
+}
+
+/* Box styling for the container */
+.content .box {
+    margin-bottom: 20px;
+}
+
+/* General box styling */
+.content .box h4 {
+    margin-bottom: 10px;
 }
