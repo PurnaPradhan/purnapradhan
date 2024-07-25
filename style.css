@@ -189,18 +189,20 @@ footer {
 }
 
 .sidebar {
-    width: 250px;
+    width: 200px;
     background: grey;
     padding: 10px;
     height: calc(100vh - 20px); /* Adjust this based on the height of the navbar */
     overflow-y: auto;
     position: fixed;
     top: 50px; /* Adjust this based on the height of the navbar */
+    overflow-y: auto;
 }
 
 .sidebar ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 .sidebar ul li {
@@ -211,34 +213,58 @@ footer {
     text-decoration: none;
     color: black;
     transition: background-color 0.3s, color 0.3s;
-}
-
-.sidebar ul li a:hover {
-    background-color: black;
-    color: white;
     display: block;
-    margin: 0;
-    padding: 0;
+    padding: 10px;
+    background: #eee;
+    border-radius: 5px;
 }
 
 .content {
     display: flex;
-    margin-left: 270px;
+    margin-left: 200px;
     gap: 5px;
     padding: 10px;
-    overflow: hidden; /* Ensures content doesn't overflow */
+    overflow: auto;
 }
 
-/* Box styling for the container */
 .content .box {
-    margin-bottom: 20px;
+    display: none;
+    width: 100%; /* Set to full width of the parent container */
+    max-width: 800px; /* Increase the maximum width as needed */
+    background-color: rgb(201, 198, 198); /* Example background color */
+    padding: 20px;
+    margin: 10px auto; /* Center align the box */
+    border: 1px solid #000;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
 }
 
-/* General box styling */
-.content .box h4 {
+/* Optional: adjust the width and other properties for different screen sizes */
+@media (max-width: 768px) {
+    .content .box {
+        width: 90%; /* Reduce width on smaller screens */
+        max-width: 100%; /* Ensure it doesn't exceed the screen width */
+    }
+}
+
+.content .box ol li {
+    color: black;
+    display: block;
     margin-bottom: 10px;
+    font-size: 16px;
 }
 
-.box h4 {
+.content .box ol li :hover{
+    text-decoration: none;
+}
+
+.box{
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: none;
+}
+
+.content .box h4{
     color: blue;
+    font-weight: bold;
 }
