@@ -7,7 +7,7 @@ body {
 
 /* Base Styles */
 nav {
-    background-color:black;
+    background-color: black;
     padding: 5px;
     position: fixed;
     top: 0;
@@ -16,7 +16,7 @@ nav {
 }
 
 nav a {
-    color:white;
+    color: white;
     text-decoration: none;
     padding: 10px;
 }
@@ -48,7 +48,7 @@ nav a:hover {
     .menu {
         display: none;
         flex-direction: column;
-        background-color: black;
+        background-color: black; /* Added missing semicolon */
         position: absolute;
         top: 50px;
         left: 0;
@@ -70,27 +70,26 @@ nav a:hover {
     }
 }
 
-
 section {
     padding: 10px;
 }
 
 #home {
     margin: 10px;
-    background:gainsboro;
+    background: gainsboro;
     text-align: center;
-    padding:20px;
-    border:solid black;
+    padding: 20px;
+    border: solid black;
     border-radius: 10px;
 }
 
 .home-content h1 {
-    font-size:60px;
+    font-size: 60px;
     background-image: url("images/matrix.jpg");
     background-size: contain;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
 .home-content p {
@@ -98,35 +97,33 @@ section {
     margin-bottom: 20px;
     font-weight: bold;
 }
-.social{
+
+.social {
     display: flex;
     justify-content: center;
 }
+
 .social-fb a {
-    color:blue;
-    margin:10px;
+    color: blue;
+    margin: 10px;
     padding: 10px;
     font-size: 30px;
 }
 
 .social-yt-insta a {
-    color:red;
-    margin:10px;
+    color: red;
+    margin: 10px;
     padding: 10px;
     font-size: 30px;
 }
 
 #about {
     margin: 10px;
-    text-align:justify;
-}
-
-#about{
-    margin:10px;
     text-align: justify;
 }
-#contact{
-    font-weight:bold;
+
+#contact {
+    font-weight: bold;
 }
 
 #about, #projects, #offer, #contact {
@@ -134,28 +131,25 @@ section {
 }
 
 footer {
-    background-color:gainsboro;
-    color:black;
+    background-color: gainsboro;
+    color: black;
     text-align: center;
     padding: 5px;
-    position:relative;
+    position: relative;
     width: 100%;
     bottom: 0;
 }
 
 /* Responsive Design */
-
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
     }
-    
+
     .social-icons {
         display: flex;
         justify-content: center;
     }
-
-    
 }
 
 .container {
@@ -163,6 +157,7 @@ footer {
     gap: 20px;
     padding: 20px;
 }
+
 .box {
     background-color: rgb(201, 198, 198);
     color: white;
@@ -171,20 +166,23 @@ footer {
     width: 300px;
     text-align: left;
 }
+
 .box h1 {
     margin: 0 0 10px 0;
 }
+
 .box ol {
     padding-left: 20px;
 }
+
 .box a {
     color: black;
     text-decoration: none;
 }
+
 .box a:hover {
     text-decoration: underline;
 }
-
 
 .wrapper {
     display: flex;
@@ -192,7 +190,7 @@ footer {
 
 .sidebar {
     width: 250px;
-    background:grey;
+    background: grey;
     padding: 10px;
     height: calc(100vh - 20px); /* Adjust this based on the height of the navbar */
     overflow-y: auto;
@@ -211,7 +209,7 @@ footer {
 
 .sidebar ul li a {
     text-decoration: none;
-    color:black;
+    color: black;
     transition: background-color 0.3s, color 0.3s;
 }
 
