@@ -238,3 +238,7 @@ footer {
 .content .box h4 {
     margin-bottom: 10px;
 }
+
+.box h4 {
+    color: blue;
+}
