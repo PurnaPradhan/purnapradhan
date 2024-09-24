@@ -84,12 +84,29 @@ section {
 }
 
 .home-content h1 {
-    font-size: 60px;
-    background-image: url("images/matrix.jpg");
-    background-size: contain;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
+    position: relative; /* Ensure positioning works with 'top' if needed */
+    font-size: 5em;
+    font-weight: 800;
+    color: rgb(17, 17, 17);
+
+    /* Custom properties (CSS variables) */
+    --x-offset: -0.0400em;
+    --y-offset: -0.0400em;
+    --stroke: 0.032em;
+    --background-color: rgb(245, 230, 243);
+    --stroke-color: rgb(12, 2, 12);
+
+    text-shadow: 
+    var(--x-offset) var(--y-offset) 0 var(--background-color),
+    calc(var(--x-offset) - var(--stroke)) calc(var(--y-offset) + var(--stroke)) 0 var(--stroke-color);
+}
+
+@supports (text-shadow: 1px 1px 1px) {
+   .home-content h1 {
+        text-shadow:
+        var(--x-offset) var(--y-offset) 0 var(--background-color),
+        var(--x-offset) var(--y-offset) var(--stroke) var(--stroke-color);
+    }
 }
 
 .home-content p {
