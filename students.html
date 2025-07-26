@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Resources - Purna B. Pradhan</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your existing stylesheet -->
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-logo">Purna B. Pradhan</a>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <!-- Set Students link as active -->
+                <li><a href="students.html" class="active">Students</a></li> 
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section animated">
+            <h2 class="section-title">Student Resources</h2>
+            <p class="section-subtitle">A collection of tools and materials to help you succeed in your studies.</p>
+
+            <!-- Resources for Students -->
+            <div class="resource-section">
+                <h3 class="resource-section-title">Explore Learning Tools</h3>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <!-- Icon for Video Tutorials -->
+                        <div class="role-icon">
+                             <img src="https://img.icons8.com/?size=100&id=398&format=png&color=228BE6" alt="video tutorials">
+                        </div>                 
+                        <h4>Video Tutorials</h4>
+                        <p>Step-by-step video guides on key computer science topics and programming languages.</p>
+                        <a href="https://www.youtube.com/@Purna_Blogs" target="_blank" rel="noopener noreferrer" class="cta-button secondary small">Explore Videos</a>
+                    </div>
+                    <div class="resource-card">
+                        <!-- Icon for Notes -->
+                        <div class="role-icon">
+                             <img src="https://img.icons8.com/?size=100&id=114094&format=png&color=228BE6" alt="notes">
+                        </div>
+                        <h4>Class Notes & Guides</h4>
+                        <p>Downloadable PDF notes, study guides, and cheat sheets for all grades.</p>
+                        <!-- MODIFIED LINK: This link now goes to the grade selection page -->
+                        <a href="select_grade.html" class="cta-button secondary small">Get Notes</a>
+                    </div>
+                    <div class="resource-card">
+                        <!-- Icon for Code -->
+                        <div class="role-icon">
+                             <img src="https://img.icons8.com/?size=100&id=PhZcqNXjSCWl&format=png&color=228BE6" alt="codes">
+                        </div>
+                        <h4>Coding Challenges</h4>
+                        <p>Practice your skills with a curated list of coding problems and challenges.</p>
+                        <a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer" class="cta-button secondary small">Start Coding</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final CTA section -->
+            <div class="final-cta animated">
+                <p>Looking for specific materials or have a question? I'd love to hear from you.</p>
+                <a href="contact.html" class="cta-button primary">Contact Me</a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Purna B. Pradhan. All Rights Reserved.</p>
+        <p>Visitor Count: <span id="visitor-count">0</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
