@@ -1,16 +1,47 @@
-<!-- thank-you.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Message Sent!</title>
+    <title>Thank You - Purna Pradhan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="content-section">
-        <h2>Thank You!</h2>
-        <p>Your message has been sent successfully. I’ll get back to you soon.</p>
-        <a href="index.html" class="cta-button">Return Home</a>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-logo">Purna Pradhan</a>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section animated">
+            <h2 class="section-title">Thank You!</h2>
+            <p class="contact-intro">Your message has been successfully sent. I’ll get back to you as soon as possible.</p>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="index.html" class="cta-button primary">Return to Home</a>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <p>© 2024 Purna Pradhan. All Rights Reserved.</p>
+        <p>Visitor Count: <span id="visitor-count">0</span></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
